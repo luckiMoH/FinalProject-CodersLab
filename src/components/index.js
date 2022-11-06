@@ -1,6 +1,6 @@
 import Logo from './Logo';
 import NotFound from './NotFound';
+import FormRow from './FormRow';
 
 
-export { Logo };
-export { NotFound };
+export { Logo, NotFound, FormRow };
