@@ -1,12 +1,11 @@
-import React from 'react';
 import {useState, useEffect} from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
 import {FormRow, Logo} from '../components';
 import Wrapper from "../assets/wrappers/RegisterPage";
-import { toast } from 'react-toastify';
-import { useSelector, useDispatch } from "react-redux";
 import { loginUser } from "../features/user/userSlice";
 import { registerUser } from "../features/user/userSlice";
-import { useNavigate } from "react-router-dom";
 
 const initialState = {
     name: '',
@@ -59,13 +58,16 @@ const Register = () => {
                 <h3>{values.isMember ? 'Login' : 'Register'}</h3>
                 {/*name field*/}
                 {!values.isMember && (
-                    <FormRow type='text' name='name' value={values.name} handleChange={handleChange}/>
+                    <FormRow type='text' name='name' value={values.name} handleChange={handleChange}/> //useForm (popatrzeć) / formik (popatrzeć) / walidacja yup (popatrzeć)
                 )}
                 {/*email field*/}
                 <FormRow type='email' name='email' value={values.email} handleChange={handleChange}/>
                 {/*password field*/}
                 <FormRow type='password' name='password' value={values.password} handleChange={handleChange}/>
-                <button type='submit' className="btn btn-block" disabled={isLoading}>{isLoading ? 'loading...' : 'submit'}</button>
+                <button
+                    type='submit'
+                    className="btn btn-block"
+                    disabled={isLoading}>{isLoading ? 'loading...' : 'submit'}</button>
                 <p>
                     {values.isMember ? 'Not a member yet?' : 'Already a member?'}
                     <button type='button' onClick={toggleMember} className='member-btn'>{values.isMember ? 'Register' : 'Login'}</button>
