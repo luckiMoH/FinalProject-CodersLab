@@ -1,3 +1,6 @@
+Jobster application is a website which helps you to monitor your actions during searching for the job and sending your CV to you potential employer. You do not have to remember all the applications you sent, you can just use Jobster to remember it for you. Once you submit job request you simply create pending job request on Jobster website, which you can later on edit to "interview" or "declined". 
+Check it out here - https://jobster-mm-js.netlify.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
